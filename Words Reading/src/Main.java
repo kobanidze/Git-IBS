@@ -9,6 +9,10 @@ public class Main {
 
     }
 
+    public static boolean isFileEmpty(File file) {
+        return file.length() == 0;
+    }
+
     public static String readWordsFromFile (String filePath) {
         File file = new File(filePath);
         String text = null;
@@ -34,7 +38,18 @@ public class Main {
         Map<String, Integer> wordsList = new TreeMap<>();
         String text = readWordsFromFile(filePath);
 
-        String[] words = text.split(" ");
+        String str = text.replaceAll("\\W", " ").trim();
+
+        if (str == null || text.isEmpty() || str.trim().isEmpty()) {
+            System.out.println("File is empty");
+            return;
+        }
+
+        String regex = "";
+
+
+
+        String[] words = str.split(" +");
         for (String word: words) {
             if (!wordsList.containsKey(word))wordsList.put(word, 1);
             else wordsList.put(word, wordsList.get(word) + 1);
