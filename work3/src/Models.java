@@ -11,13 +11,13 @@ public class Models {
         public Securities[] securities;
     }
 
-    enum Currency {RUB, USD, EU}
+    enum Currency {RUB, USD, EU};
 
     static class Securities {
         public String secName;
         public Currency[] currencies;
         public String code;
-        public Date date;
+        public String date;
     }
 
     static class Companies {

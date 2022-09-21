@@ -1,6 +1,6 @@
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-//import java.util.*;
+import java.util.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -17,11 +17,9 @@ class LocalDateAdapter {
 
         for (SimpleDateFormat pattern : knownPatterns) {
             try {
-                // Take a try
                 return new Date(pattern.parse(candidate).getTime());
-
             } catch (ParseException pe) {
-                // Loop on
+                //
             }
         }
         System.err.println("No known Date format found: " + candidate);

@@ -4,6 +4,6 @@ public interface Preparation {
     void showCompany();
     void showAllSecurities();
     void showDelayedSecurities();
-    void showCompaniesFromDate(Date date);
+    void showCompaniesFromDate(String date);
     void showSecurityByCurrency(Models.Currency currency);
 }
