@@ -60,9 +60,12 @@ public class Logic implements Preparation {
                         }
                         case "di", "DI" -> {
                             System.out.println("\nВведите валюту для поиска ценных бумаг (USD, EU, RUB): ");
-                            String currency = "";
-                            currency = reader.readLine();
-                            showSecurityByCurrency(Models.Currency.valueOf("USD"));
+                            try {
+                                showSecurityByCurrency(Models.Currency.valueOf(reader.readLine()));
+                            }
+                            catch (IllegalArgumentException e) {
+                                System.out.println("Такой валюты нет");
+                            }
                         }
                         default -> System.out.println("Такой команды нет");
                     }
@@ -121,11 +124,9 @@ public class Logic implements Preparation {
 
     @Override
     public void showSecurityByCurrency(Models.Currency currency) {
-
-
         for (Models.CompanyInfo company: companies.companies) {
             for (Models.Securities securities: company.securities) {
-                if (Arrays.asList(securities.currencies).contains(currency)) {
+                if (Arrays.asList(securities.currency).contains(currency)) {
                     System.out.println("|Код: " + securities.code + " | Дата истечения: " + securities.date + " | Название организации-владельца: " + company.name + "|\n");
                 }
             }

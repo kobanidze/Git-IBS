@@ -1,3 +1,4 @@
+import java.util.Currency;
 import java.util.Date;
 
 public class Models {
@@ -29,7 +30,7 @@ public class Models {
 
     static class Securities {
         public String secName;
-        public Currency[] currencies;
+        public Currency[] currency;
         public String code;
         public String date;
     }
