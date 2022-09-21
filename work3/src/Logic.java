@@ -28,7 +28,7 @@ public class Logic implements Preparation {
     }
 
     public void call() throws IOException {
-        String exampleRequest = FileUtils.readFileToString(new File("C:\\Users\\Me\\IdeaProjects\\Git-IBS\\work3\\src\\Company.json"), StandardCharsets.UTF_8);
+        String exampleRequest = FileUtils.readFileToString(new File("D:\\Java\\Git-IBS\\work3\\src\\Company.json"), StandardCharsets.UTF_8);
         po(exampleRequest);
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String command = "";
@@ -47,31 +47,24 @@ public class Logic implements Preparation {
             try {
                 command = reader.readLine();
                 if (!isInteger(command)) {
-                    if (command.equals("c") || command.equals("C")) {
-                        System.out.println(info);
-                    }
-                    if (command.equals("l") || command.equals("L")) {
-                        showCompany();
-                    }
-                    if (command.equals("s") || command.equals("S")) {
-                        showAllSecurities();
-                    }
-                    if (command.equals("ds") || command.equals("DS")) {
-                        showDelayedSecurities();
-                    }
-                    if (command.equals("cld") || command.equals("CLD")) {
-                        System.out.println("\nВведите дату: ");
-                        String date = "";
-                        date = reader.readLine();
-                        showCompaniesFromDate(date);
-                    }
-                    if (command.equals("di") || command.equals("DI")) {
-                        System.out.println("\nВведите валюту для поиска ценных бумаг (USD, EU, RUB): ");
-                        String currency = "";
-                        currency = reader.readLine();
-                        showSecurityByCurrency(Models.Currency.valueOf("USD"));
-                    } else {
-                        System.out.println("Такой команды нет");
+                    switch (command) {
+                        case "c", "C" -> System.out.println(info);
+                        case "l", "L" -> showCompany();
+                        case "s", "S" -> showAllSecurities();
+                        case "ds", "DS" -> showDelayedSecurities();
+                        case "cld", "CLD" -> {
+                            System.out.println("\nВведите дату: ");
+                            String date = "";
+                            date = reader.readLine();
+                            showCompaniesFromDate(date);
+                        }
+                        case "di", "DI" -> {
+                            System.out.println("\nВведите валюту для поиска ценных бумаг (USD, EU, RUB): ");
+                            String currency = "";
+                            currency = reader.readLine();
+                            showSecurityByCurrency(Models.Currency.valueOf("USD"));
+                        }
+                        default -> System.out.println("Такой команды нет");
                     }
                 } else {
                     System.out.println("Выберете команду из списка!\n");

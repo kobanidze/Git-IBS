@@ -26,4 +26,3 @@ class LocalDateAdapter {
         return null;
     }
 }
-
