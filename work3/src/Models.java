@@ -11,7 +11,21 @@ public class Models {
         public Securities[] securities;
     }
 
-    enum Currency {RUB, USD, EU};
+    enum Currency {
+        RUB("RUB"),
+        USD("USD"),
+        EU("EU");
+
+        private final String name;
+
+        Currency(String name) {
+            this.name = name;
+        }
+
+        public String getTitle() {
+            return name;
+        }
+    };
 
     static class Securities {
         public String secName;

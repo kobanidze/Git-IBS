@@ -81,7 +81,7 @@ public class Logic implements Preparation {
     @Override
     public void showCompany() {
         for (Models.CompanyInfo company: companies.companies) {
-            System.out.println("Имя компании: " + company.name + " | " + "Дата основания: " + company.founded + "|\n");
+            System.out.println("|Имя компании: " + company.name + " | " + "Дата основания: " + company.founded + "|\n");
         }
     }
 
