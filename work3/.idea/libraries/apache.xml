@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="apache" type="repository">
+    <properties maven-id="io.urf:apache-commons-configuration2-surf:0.2.0" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/urf/apache-commons-configuration2-surf/0.2.0/apache-commons-configuration2-surf-0.2.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/urf/surf/0.2.0/surf-0.2.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/globalmentor/globalmentor-core/0.5.5/globalmentor-core-0.5.5.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/globalmentor/globalmentor-itu/0.5.1/globalmentor-itu-0.5.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/zalando/faux-pas/0.5.0/faux-pas-0.5.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/clogr/clogr-logback/0.7.0/clogr-logback-0.7.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.1.7/logback-classic-1.1.7.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-core/1.1.7/logback-core-1.1.7.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/clogr/clogr/0.7.0/clogr-0.7.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/csar/csar/0.7.0/csar-0.7.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.21/slf4j-api-1.7.21.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
