@@ -54,7 +54,7 @@ public class Logic implements Preparation {
                         case "es", "ES" -> showExpiredSecurities();
                         case "cld", "CLD" -> {
                             System.out.println("\nВведите дату: ");
-                            String date = "";
+                            String date;
                             date = reader.readLine();
                             showCompaniesFromDate(date);
                         }
@@ -115,7 +115,7 @@ public class Logic implements Preparation {
     @Override
     public void showCompaniesFromDate(String date) {
         for (Models.CompanyInfo company: companies.companies) {
-            if (LocalDateAdapter.parse(date).compareTo(LocalDateAdapter.parse(company.founded)) <= 0) {
+            if (Objects.requireNonNull(LocalDateAdapter.parse(date)).compareTo(LocalDateAdapter.parse(company.founded)) <= 0) {
                 System.out.println("Имя компании: " + company.name + " | " + "Дата основания: " + company.founded + "|\n");
             }
         }
