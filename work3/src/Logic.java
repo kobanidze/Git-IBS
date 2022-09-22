@@ -38,9 +38,9 @@ public class Logic implements Preparation {
                 c/C - показать команды
                 l/L - показать список компаний
                 s/S - показать список всех ценных бумаг
-                ds/DS - показать список всех просроченных ценных бумаг
+                es/ES - показать список всех просроченных ценных бумаг
                 cld/CLD - показать список компаний начиная с ДАТЫ (введите дату)
-                di/Di - показать список всех ценных бумаг по валюте
+                sbc/SBC - показать список всех ценных бумаг по валюте
                 """;
         System.out.println(info);
         while (!(command.equals("0"))) {
@@ -51,14 +51,14 @@ public class Logic implements Preparation {
                         case "c", "C" -> System.out.println(info);
                         case "l", "L" -> showCompany();
                         case "s", "S" -> showAllSecurities();
-                        case "ds", "DS" -> showDelayedSecurities();
+                        case "es", "ES" -> showExpiredSecurities();
                         case "cld", "CLD" -> {
                             System.out.println("\nВведите дату: ");
                             String date = "";
                             date = reader.readLine();
                             showCompaniesFromDate(date);
                         }
-                        case "di", "DI" -> {
+                        case "sbc", "SBC" -> {
                             System.out.println("\nВведите валюту для поиска ценных бумаг (USD, EU, RUB): ");
                             try {
                                 showSecurityByCurrency(Models.Currency.valueOf(reader.readLine()));
@@ -98,7 +98,7 @@ public class Logic implements Preparation {
     }
 
     @Override
-    public void showDelayedSecurities() {
+    public void showExpiredSecurities() {
         Date currentDate = new Date();
         int count = 0;
         for (Models.CompanyInfo company: companies.companies) {
